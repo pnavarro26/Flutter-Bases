@@ -15,7 +15,7 @@ class MainApp extends StatelessWidget {
       routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
       theme: AppTheme(
-        selectedColor: 5,
+        selectedColor: 1,
       ).getTheme(), // configurar los colores para la app
       //home: HomeScreen(),
       // routes: {
