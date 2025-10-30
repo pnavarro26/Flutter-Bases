@@ -3,6 +3,8 @@ import 'package:go_router/go_router.dart';
 import 'package:widget_app/config/menu/menu_items.dart';
 
 class HomeScreen extends StatelessWidget {
+  static const name = 'home_screen';
+
   const HomeScreen({super.key});
 
   // widget de tipo Scaffold, que contiene el appBar y el body, con el ListViwe de botones //
@@ -49,12 +51,18 @@ class _CustomListTile extends StatelessWidget {
       title: Text(menuItem.title),
       subtitle: Text(menuItem.subTitle),
       onTap: () {
+        // FLUTTE //
         /*Navigator.of(context).push(
           MaterialPageRoute<void>(builder: (context) => const ButtonsScreen()),
         );*/
-
         //Navigator.pushNamed(context, menuItem.link);
+
+        // GO ROUTER //
+        // navegar a la ruta por medio del path
         context.push(menuItem.link);
+
+        // navegar a la ruta por medio del name
+        //context.pushNamed(menuItem.name); // NOTA: hayque agregar al menuItem, la propiedad name, para almacenar el nombre de esa ruta
       },
     );
   }
