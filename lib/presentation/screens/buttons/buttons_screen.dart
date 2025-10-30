@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class ButtonsScreen extends StatelessWidget {
   static const name = 'buttons_screen';
@@ -8,7 +9,98 @@ class ButtonsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Buttons Screen')),
-      body: const Placeholder(),
+      body: _ButtonsView(),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.arrow_back_ios_new_rounded),
+        onPressed: () {
+          context.pop();
+        },
+      ),
+    );
+  }
+}
+
+class _ButtonsView extends StatelessWidget {
+  const _ButtonsView();
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+      child: Wrap(
+        spacing: 10,
+        crossAxisAlignment: WrapCrossAlignment.center,
+        alignment: WrapAlignment.center,
+        children: [
+          ElevatedButton(onPressed: () {}, child: const Text('Elevated')),
+          ElevatedButton(
+            onPressed: null,
+            child: const Text('Elevated Disable'),
+          ),
+          ElevatedButton.icon(
+            onPressed: () {},
+            icon: const Icon(Icons.access_alarms_rounded),
+            label: Text('Alarma'),
+          ),
+          FilledButton(onPressed: () {}, child: const Text('Fill')),
+          FilledButton.icon(
+            onPressed: () {},
+            icon: Icon(Icons.account_balance_wallet_outlined),
+            label: Text('Fill Icon'),
+          ),
+          OutlinedButton(onPressed: () {}, child: const Text('OutLine')),
+          OutlinedButton.icon(
+            onPressed: () {},
+            icon: Icon(Icons.add_home_outlined),
+            label: Text('Fill Icon'),
+          ),
+          TextButton(onPressed: () {}, child: const Text('Text')),
+          TextButton.icon(
+            onPressed: () {},
+            icon: Icon(Icons.add_sharp),
+            label: Text('Text Icon'),
+          ),
+
+          const CustomButton(),
+
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.account_box_outlined),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.account_box_outlined),
+            style: ButtonStyle(
+              backgroundColor: WidgetStateProperty.all(colors.primary),
+              iconColor: WidgetStateProperty.all(Colors.white),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class CustomButton extends StatelessWidget {
+  const CustomButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(20),
+      child: Material(
+        color: colors.primary,
+        child: InkWell(
+          onTap: () {},
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            child: Text('Holis', style: TextStyle(color: Colors.white)),
+          ),
+        ),
+      ),
     );
   }
 }
