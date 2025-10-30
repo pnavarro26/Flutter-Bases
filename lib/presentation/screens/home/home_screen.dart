@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:widget_app/config/menu/menu_items.dart';
+import 'package:widget_app/presentation/screens/buttons/buttons_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -20,6 +21,7 @@ class _HomeViwe extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // listado de widet .builder se contruye en ejecucion
     return ListView.builder(
       itemCount: appMenuItems.length,
       itemBuilder: (context, index) {
@@ -46,7 +48,13 @@ class _CustomListTile extends StatelessWidget {
       trailing: Icon(Icons.arrow_forward_ios_rounded, color: color.primary),
       title: Text(menuItem.title),
       subtitle: Text(menuItem.subTitle),
-      onTap: () {},
+      onTap: () {
+        /*Navigator.of(context).push(
+          MaterialPageRoute<void>(builder: (context) => const ButtonsScreen()),
+        );*/
+
+        Navigator.pushNamed(context, menuItem.link);
+      },
     );
   }
 }
