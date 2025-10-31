@@ -39,4 +39,16 @@ const appMenuItems = <MenuItem>[
     link: '/snackbars',
     icon: Icons.info_outline,
   ),
+  MenuItem(
+    title: 'Animated Container',
+    subTitle: 'Animated Container',
+    link: '/animated',
+    icon: Icons.check_box_outlined,
+  ),
+  MenuItem(
+    title: 'UI Controlls',
+    subTitle: 'UI Controlls',
+    link: '/ui-controlls',
+    icon: Icons.check_box_outlined,
+  ),
 ];
