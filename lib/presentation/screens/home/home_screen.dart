@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:widget_app/config/menu/menu_items.dart';
+import 'package:widget_app/presentation/widgets/side_menu.dart';
 
 class HomeScreen extends StatelessWidget {
   static const name = 'home_screen';
@@ -10,9 +11,13 @@ class HomeScreen extends StatelessWidget {
   // widget de tipo Scaffold, que contiene el appBar y el body, con el ListViwe de botones //
   @override
   Widget build(BuildContext context) {
+    final scaffolKey = GlobalKey<ScaffoldState>();
+
     return Scaffold(
+      key: scaffolKey, // contiene la referencia al estato al¿ctual del Scaffol
       appBar: AppBar(title: Text('Futter + Material 3')),
       body: _HomeViwe(),
+      drawer: SideMenu(scaffolKey: scaffolKey), // menu lateral
     );
   }
 }

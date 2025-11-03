@@ -51,4 +51,28 @@ const appMenuItems = <MenuItem>[
     link: '/ui-controlls',
     icon: Icons.check_box_outlined,
   ),
+  MenuItem(
+    title: 'Tutorial',
+    subTitle: 'Tutorial',
+    link: '/tutorial',
+    icon: Icons.add_circle_outline,
+  ),
+  MenuItem(
+    title: 'Infnite Scroll',
+    subTitle: 'Tutorial',
+    link: '/infinite',
+    icon: Icons.list_alt_rounded,
+  ),
+  MenuItem(
+    title: 'Counter Screen',
+    subTitle: 'Counter Screen',
+    link: '/counter_screen',
+    icon: Icons.add,
+  ),
+  MenuItem(
+    title: 'Theme Chager',
+    subTitle: 'Theme Chager',
+    link: '/theme-changer',
+    icon: Icons.color_lens_outlined,
+  ),
 ];
