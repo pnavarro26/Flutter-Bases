@@ -10,3 +10,15 @@ final colorListProvider = Provider((ref) => colorList);
 
 // Listado de Colores inmutable
 final selectedIndexColorProvider = StateProvider((ref) => 0);
+
+// Un objeto de tipo AppTheme(custom)
+final themeNotifierProvider = StateNotifierProvider<themeNotifier, AppTheme>(
+  (ref) => themeNotifier(),
+);
+
+// Controller: Controla el estado del StateNotifierProvider
+class themeNotifier extends StateNotifier<AppTheme> {
+  // STATS = Estado = new AppTheme()
+  themeNotifier()
+    : super(AppTheme()); // crea una instancia de la clase AppTheme
+}
